@@ -1,0 +1,69 @@
+\documentclass[12pt]{article}
+
+\usepackage[T2A]{fontenc}
+\usepackage[utf8]{inputenc}
+
+\usepackage[russian,english]{babel}
+
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage[table,xcdraw]{xcolor}
+\usepackage{listings}
+\usepackage{multirow}
+
+\title{Домашняя работа по \LaTeX ~№1}
+\author{Максимелиан Мумладзе}
+\date{\today}
+
+% - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+\begin{document}
+\maketitle\tableofcontents\newpage\pagebreak
+
+\begin{flushright}
+\hfill\textit{Audi multa,\\loquere pauca}
+\end{flushright}
+
+\vspace{20pt}
+
+Это мой первый\iffalse в кольце вычета $\approx 20$)\fi документ в системе компьютерной вёрстки \LaTeX.
+
+\begin{center}
+\Huge{\sffamily <<Ура!!!>>}
+\end{center}
+
+А теперь формулы. \textsc{Формула}~--- краткое и точное словесное выражение, определение или же ряд математических величин, выраженный условными знаками.
+
+\vspace{15pt}
+
+\hspace{28pt}{\large\bfseries Термодинамика}
+
+Уравнение Менделеева--Клапейрона~--- уравнение состояния идеального газа, имеющее вид $pV = \nu RT,$ где $p$~--- давление, $V$~--- объем, занимаемый газом, $T$~--- температура газа, $\nu$~--- количество вещества газа, а $R$~--- универсальная газовая постоянная.
+
+\vspace{15pt}
+
+\hspace{28pt}{\large\bfseries Геометрия \hfill Планиметрия}
+
+Для \textsl{плоского} треугольника со сторонами $a, b, c$ и углом $\alpha$, лежащем против стороны $a$, справедливо соотношение
+
+$$
+a^2 = b^2 + c^2 - 2bc\cos\alpha,
+$$
+
+из которого можно выразить косинус угла треугольника:
+
+$$
+\cos\alpha = \frac{b^2 + c^2 - a^2}{2bc}.
+$$\\
+
+Пусть $p$~--- полупериметр треугольника, тогда путем несложных преобразований можно получить, что 
+
+$$
+\tg\frac{\alpha}{2} = \sqrt[]{\frac{(p - b)(p - c)}{p(p - a)}},
+$$
+
+\vspace{1cm}
+
+На сегодня, пожалуй, хватит\dots ~Удачи!
+
+\end{document}
