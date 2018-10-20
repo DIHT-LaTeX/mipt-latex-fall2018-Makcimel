@@ -3,22 +3,16 @@
 \usepackage[T2A]{fontenc}
 \usepackage[utf8]{inputenc}
 
-\usepackage[russian,english]{babel}
-
-\usepackage{graphicx}
-\usepackage{hyperref}
-\usepackage[table,xcdraw]{xcolor}
-\usepackage{listings}
-\usepackage{multirow}
+\usepackage[russian]{babel}
 
 \title{Домашняя работа по \LaTeX ~№1}
 \author{Максимелиан Мумладзе}
-\date{\today}
+\date{}
 
 % - - - - - - - - - - - - - - - - - - - - - - - - - - - 
 
 \begin{document}
-\maketitle\tableofcontents\newpage\pagebreak
+\maketitle
 
 \begin{flushright}
 \hfill\textit{Audi multa,\\loquere pauca}
@@ -47,7 +41,7 @@
 Для \textsl{плоского} треугольника со сторонами $a, b, c$ и углом $\alpha$, лежащем против стороны $a$, справедливо соотношение
 
 $$
-a^2 = b^2 + c^2 - 2bc\cos\alpha,
+a^2 = b^2 + c^2 - 2 b c \cos\alpha,
 $$
 
 из которого можно выразить косинус угла треугольника:
@@ -59,7 +53,7 @@ $$\\
 Пусть $p$~--- полупериметр треугольника, тогда путем несложных преобразований можно получить, что 
 
 $$
-\tg\frac{\alpha}{2} = \sqrt[]{\frac{(p - b)(p - c)}{p(p - a)}},
+\tg\frac{\alpha}{2} = \sqrt{\frac{(p - b)(p - c)}{p(p - a)}},
 $$
 
 \vspace{1cm}
