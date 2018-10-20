@@ -8,3 +8,8 @@
 !/img/*.png
 !/img/*.jpg
 !/data
+*.toc
+task1.synctex.gz
+*.out
+*.aux
+task1.log
