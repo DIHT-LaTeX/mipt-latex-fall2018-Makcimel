@@ -22,7 +22,7 @@
 \newenvironment{task}[1]{%
 \begin{framed}
   \noindent
-  \underline{\bfseries Задача \stepcounter{taskn}\thetaskn. <<#1>>}
+  \underline{\bfseries Задача~\stepcounter{taskn}\thetaskn. <<#1>>}
   \setlength{\parindent}{0cm}
 }{%
 \end{framed}
@@ -37,10 +37,10 @@
 
 \begin{thm}[Линдеберга]
 
-Пусть $\{\xi_k\}_{k \geq 1}$~--- независимая случайная величина, $\mathsf{E} \xi_k^2 < +\infty ~ \forall k,$ обозначим $m_k = \mathsf{E} \xi_k, \delta_k^2 = \mathsf{D} \xi_k > 0: S_n = \sum\limits_{i = 1}^n \xi_k;$ $D_n^2 = \sum\limits_{k = 1}^n \delta_k^2$ и $F_k(x)$ - функция распределения $\xi_k$. Пусть выполняется условие Линдеберга, то есть
+Пусть $\{\xi_k\}_{k \geq 1}$~--- независимая случайная величина, $\mathsf{E} \xi_k^2 < +\infty ~ \forall k$, обозначим $m_k = \mathsf{E} \xi_k,$ $\delta_k^2 = \mathsf{D} \xi_k > 0,$ $S_n = \sum\limits_{i = 1}^n \xi_k;$ $D_n^2 = \sum\limits_{k = 1}^n \delta_k^2$ и $F_k(x)$~--- функция распределения $\xi_k$. Пусть выполняется условие Линдеберга, то есть
 
 $$
-\forall \varepsilon > 0 ~ \frac{1}{\mathsf{D}_n^2} \sum\limits_{k = 1}^n \int\limits_{\{x: |x - m_k| > \varepsilon \mathsf{D}_n\}} (x - m_k)^2\,dF_k(x) \xrightarrow[m \rightarrow \infty]{} 0.
+\forall \varepsilon > 0 ~ \frac{1}{\mathsf{D}_n^2} \sum\limits_{k = 1}^n \int\limits_{\big\{x: |x - m_k| > \varepsilon \mathsf{D}_n\big\}} (x - m_k)^2\,dF_k(x) \xrightarrow[m \rightarrow \infty]{} 0.
 $$
 
 Тогда $\frac{S_n - \mathsf{E} S_n}{\sqrt{\mathsf{D} S_n}} \xrightarrow{d} \mathcal{N}(0, 1), n \rightarrow \infty$.
@@ -81,7 +81,7 @@ $$
 
 \begin{task}{Бейрут}
 
-В какой момент по истинному солнечному времени $1$ сентября Регул ($\alpha_1 = 10^h 9^m, \delta_1 = 11\degree 53'$) и Шертан ($\alpha_2 = 11^h 15^m, \delta_2 = 15 \degree 20'$) находятся на одном альмукантарате в Бейруте ($\varphi = 33 \degree 53'$)?
+В какой момент по истинному солнечному времени $1$ сентября Регул ($\alpha_1 = 10^\text{h} \, 9^\text{m}, \delta_1 = 11\degree \, 53'$) и Шертан ($\alpha_2 = 11^\text{h} \, 15^\text{m}, \delta_2 = 15 \degree \, 20'$) находятся на одном альмукантарате в Бейруте ($\varphi = 33 \degree \, 53'$)?
 
 \end{task}
 
