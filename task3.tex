@@ -1,0 +1,43 @@
+\documentclass[12pt]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[russian]{babel}
+\usepackage[margin=1cm, paper=a4paper]{geometry}
+\usepackage{amsthm,mathtools,amsmath,amsfonts}
+\usepackage{framed}
+\usepackage{gensymb}
+\usepackager{hyperref}
+
+\author{Мумладзе Максимелиан}
+\title{Домашнее задание №2}
+\date{\today}
+
+\DeclareMathOperator{\mat}{Mat}
+
+\newtheorem{thm}{Теорема}[section]
+\theoremstyle{definition}\newtheorem{defi}{Определение}
+
+\newcounter{taskn}[section]
+\newenvironment{task}[1]{%
+\begin{framed}
+  \noindent
+  \underline{\bfseries Задача \stepcounter{taskn}\thetaskn. <<#1>>}
+  \setlength{\parindent}{0cm}
+}{%
+\end{framed}
+}
+
+\begin{document}
+\maketitle
+
+\section{Краткий обзор}
+\begin{center}\Huge
+
+Нептун.
+
+\end{center}
+
+\textbf{Нептун}~--- восьмая и самая дальняя от Земли планета Солнечной системы. Нептун также является четвёртой по диаметру и третьей по массе планетой. Масса Нептуна в $17,2$ раза, а диаметр экватора в $3,9$ раза больше земных. Название планеты было предложено русско--немецким астрономом Василием Струве\footnote{\href{http://articles.adsabs.harvard.edu/full/seri/AN.../0025/0000164.000.html}{пруф}}.  Её астрономический символ  ~--- стилизованная версия трезубца Нептуна.
+
+
+\end{document}
