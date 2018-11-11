@@ -1,0 +1,166 @@
+\documentclass[12pt]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[russian]{babel}
+\usepackage[margin=2cm, paper=a4paper]{geometry}
+\usepackage{amsthm,amsmath,amsfonts}
+\usepackage{mathtools}
+\usepackage{framed}
+\usepackage{gensymb}
+\usepackage{hyperref}
+\usepackage{marvosym} % For Neptune.
+\usepackage{wrapfig}
+\usepackage{tabularx}
+\usepackage{subcaption}
+\usepackage[margin=10pt,font=small,labelfont=bf,labelsep=endash]{caption}
+\usepackage{enumitem}
+\usepackage{graphicx}
+\usepackage{tikz}
+\usepackage{xcolor}
+\usepackage{listings}
+\usepackage{fancyhdr}
+\usepackage{pgfplots}
+
+
+\author{Мумладзе Максимелиан}
+\title{Домашнее задание №4}
+\date{\today}
+
+\DeclareMathOperator{\mat}{Mat}
+
+
+\newtheorem{thm}{Теорема}[section]
+\theoremstyle{definition}\newtheorem{defi}{Определение}
+
+
+\newcounter{taskn}[section]
+\newenvironment{task}[1]{%
+\begin{framed}
+  \noindent
+  \underline{\bfseries Задача \stepcounter{taskn}\thetaskn. <<#1>>}
+  \setlength{\parindent}{0cm}
+}{%
+\end{framed}
+}
+
+\newenvironment{note_enum}{%
+\begin{framed}
+  
+  \begin{small}
+  \begin{enumerate}[wide, labelwidth=!, labelindent=0pt]
+    \vspace{-1pc}
+}{%
+  \end{enumerate}
+  \end{small}
+  \vspace{-1pc}
+\end{framed}
+}
+
+
+\newcolumntype{L}[1]{>{\hsize=#1\textwidth%
+\raggedright\arraybackslash}X}%
+\newcolumntype{R}[1]{>{\hsize=#1\textwidth%
+\raggedleft\arraybackslash}X}%
+\newcolumntype{C}[1]{>{\hsize=#1\textwidth%
+\centering\arraybackslash}X}
+
+\lstset{ 
+  backgroundcolor=\color[HTML]{F8F8F8},
+  basicstyle=\footnotesize\color[HTML]{000000},        % the size of the fonts that are used for the code
+  breakatwhitespace=false,         % sets if automatic breaks should only happen at whitespace
+  breaklines=true,                 % sets automatic line breaking
+  captionpos=b,                    % sets the caption-position to bottom
+  commentstyle=\color[HTML]{008000},% comment style
+  frame=single,	                   % adds a frame around the code
+  keepspaces=true,                 % keeps spaces in text, useful for keeping indentation of code (possibly needs columns=flexible)
+  keywordstyle=\color[HTML]{800000},       % keyword style
+  language=Python,                 % the language of the code
+  numbers=left,                    % where to put the line-numbers; possible values are (none, left, right)
+  identifierstyle=\color[HTML]{000080},
+  numbersep=5pt,                   % how far the line-numbers are from the code
+  numberstyle=\color{gray}, % the style that is used for the line-numbers
+  rulecolor=\color{black},         % if not set, the frame-color may be changed on line-breaks within not-black text (e.g. comments (green here))
+  stepnumber=1,                    % the step between two line-numbers. If it's 1, each line will be numbered
+  stringstyle=\color[HTML]{FF0000},     % string literal style
+  tabsize=2,	                   % sets default tabsize to 2 spaces
+  title=\lstname                   % show the filename of files included with \lstinputlisting; also try caption instead of title
+}
+
+\pagestyle{fancy}
+\fancyhead{}
+\fancyhead[LE,RO]{\thepage}
+\fancyhead[CO,CE]{Домашнее задание}
+
+\fancyfoot{}
+\fancyfoot[LE,RO]{Часть \thepart , раздел \thesection}
+\fancyfoot[CO,CE]{\LaTeX}
+
+\renewcommand{\footrulewidth}{0.3mm}
+\renewcommand{\headrulewidth}{0.3mm}
+
+\pagestyle{fancy}
+
+\pgfplotsset{
+width=14 cm,
+x label style={font = {\small\sffamily}, yshift = .5pc},
+tick label style = {font = {\scriptsize}},
+y label style = {font = {\small\sffamily}, yshift = -.8pc},
+axis line style = {line width = .5 pt},
+grid style = {gray, dotted},
+minor x tick num = 1,
+minor y tick num = 1,
+grid = major,
+every axis/.append style = {line width = .7 pt}
+}
+
+
+%- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+\begin{document}
+\maketitle\thispagestyle{fancy}
+
+\part{Лаба}
+
+\section{Вступление}
+
+\hspace{1pc} Привет! У нас сегодня много работы, а именно~--- лаба! Но так как у меня не хватило времени снять показания с счётчика, нам придется подгонять\footnote{О БОЖЕ}. Для этого я быстренько написал программу на питоне. На, посмотри:
+
+\begin{lstlisting}
+import numpy as np
+
+SIZE = 100
+A = np.pi
+B = np.exp(1)
+err = np.random.normal(scale=np.pi, size=SIZE)
+f = lambda x: A * x + B
+
+x = np.linspace(-10, 10, SIZE)
+y = f(x) + err
+a, b = np.polyfit(x, y, deg = 1)
+print(a, ' ', b, end='\n')
+    
+f = open("data.dat", "w")
+f.write("x\ty")
+
+for i in range(len(x)):
+	f.write("\n{}\t{}".format(x[i], y[i]))
+\end{lstlisting}
+
+Она генерирует данные, которые нам понадобятся для построения зависимости $y = ax + b$. По методу наименьших квадратов я уже посчитал значения $a = 3.0612$, $b = 2.6882$.
+
+\newpage\section{График}
+Но на этом чудеса техники на заканчиваются! Нам не придется даже рисовать график, ведь кто может нарисовать его лучше, чем машина? Вот, посмотри:
+
+
+
+\centering
+\begin{tikzpicture}
+  \begin{axis}
+    \addplot+ [only marks, x=x, y=S_k, red] 
+    table{data/data.dat};
+    
+    \addplot+ [no marks, black, line width = 3pt, domain = -12:12]
+    {3.0612*x+2.6882};
+  \end{axis}
+\end{tikzpicture}
+
+\end{document}

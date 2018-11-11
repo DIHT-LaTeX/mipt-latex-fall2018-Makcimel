@@ -1,0 +1,91 @@
+\documentclass[12pt]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[russian]{babel}
+\usepackage[margin=0.5cm, paper=a4paper]{geometry}
+\usepackage{amsthm,amsmath,amsfonts}
+\usepackage{mathtools}
+\usepackage{framed}
+\usepackage{gensymb}
+\usepackage{hyperref}
+\usepackage{marvosym} % For Neptune.
+\usepackage{wrapfig}
+\usepackage{tabularx}
+\usepackage{subcaption}
+\usepackage[margin=10pt,font=small,labelfont=bf,labelsep=endash]{caption}
+\usepackage{enumitem}
+\usepackage{graphicx}
+\usepackage{tikz}
+\usepackage{xcolor}
+
+\author{Мумладзе Максимелиан}
+\title{Домашнее задание №3}
+\date{\today}
+\pagenumbering{gobble}
+
+\DeclareMathOperator{\mat}{Mat}
+
+
+\newtheorem{thm}{Теорема}[section]
+\theoremstyle{definition}\newtheorem{defi}{Определение}
+
+
+\newcounter{taskn}[section]
+\newenvironment{task}[1]{%
+\begin{framed}
+  \noindent
+  \underline{\bfseries Задача \stepcounter{taskn}\thetaskn. <<#1>>}
+  \setlength{\parindent}{0cm}
+}{%
+\end{framed}
+}
+
+\newenvironment{note_enum}{%
+\begin{framed}
+  
+  \begin{small}
+  \begin{enumerate}[wide, labelwidth=!, labelindent=0pt]
+    \vspace{-1pc}
+}{%
+  \end{enumerate}
+  \end{small}
+  \vspace{-1pc}
+\end{framed}
+}
+
+
+\newcolumntype{L}[1]{>{\hsize=#1\textwidth%
+\raggedright\arraybackslash}X}%
+\newcolumntype{R}[1]{>{\hsize=#1\textwidth%
+\raggedleft\arraybackslash}X}%
+\newcolumntype{C}[1]{>{\hsize=#1\textwidth%
+\centering\arraybackslash}X}
+
+%- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+\begin{document}
+
+\centering
+\begin{tikzpicture}
+  \foreach \x in {0, 0.1, ..., 19} {
+    \draw[very thin, color={rgb:orange,1;white,4}] (\x, 0) -- (\x, -28);
+  };
+  \foreach \y in {0, 0.1, ..., 28} {
+    \draw[very thin, color={rgb:orange,1;white,4}] (0, -\y) -- (19, -\y);
+  };
+  
+  \foreach \x in {0, 0.5, ..., 19} {
+    \draw[thick, color={rgb:brown,1;white,2}] (\x, 0) -- (\x, -28);
+  };
+  \foreach \y in {0, 0.5, ..., 28} {
+    \draw[thick, color={rgb:brown,1;white,2}] (0, -\y) -- (19, -\y);
+  };
+  
+  \foreach \x in {0, 1, ..., 19} {
+    \draw[very thick, color=brown] (\x, 0) -- (\x, -28);
+  };
+  \foreach \y in {0, 1, ..., 28} {
+    \draw[very thick, color=brown] (0, -\y) -- (19, -\y);
+  };
+\end{tikzpicture}
+
+\end{document}
